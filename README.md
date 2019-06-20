@@ -6,11 +6,19 @@ DuNeuro integration into Brainstorm Toolbox for advanced FEM forward modelling.
 This repo is concieved to work in a linux or mac environment. So far it works fine in an ubuntu 10.04 lts. Windows executables will be generated through cross-compilation with mingw.
 
 1. update needed system libraries 
-   in a new 18.04 lts ubuntu we need: mingw-w64 g++-mingw-w64 libc6-dev-i386
+   in a new 18.04 lts ubuntu we need the following packages:
+   ```
+   sudo apt-get install mingw-w64 g++-mingw-w64 libc6-dev-i386
+   ```
+   
 2. clone this repository
 
 ## linux version
 1. execute setup_linux.h (for release build).
+```
+./setup_linux.h
+```
+
   comments on options...
   verify the files config_release_linux.opts and config_debug_linux.opts exist.
   remember it is always desirable to have clean build folders.
