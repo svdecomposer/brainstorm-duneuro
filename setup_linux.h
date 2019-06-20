@@ -38,9 +38,6 @@ if [[ $answer = y ]]; then
  git clone --branch feature/c-interface-compatibility https://gitlab.dune-project.org/duneuro/duneuro.git 
  git clone --branch feature/c-interface https://gitlab.dune-project.org/duneuro/duneuro-matlab.git
 
- # Fortran patch
-# printf "\n\n#####################################################\n\n               Performing fortran patch!!\n\n#####################################################\n"
-# sed -i 's/workaround_9220(Fortran Fortran_Works)/if(ENABLE_Fortran)\n    workaround_9220(Fortran #Fortran_Works)\n  endif()/g' dune-common/cmake/modules/DuneMacros.cmake 
 fi
 
 
