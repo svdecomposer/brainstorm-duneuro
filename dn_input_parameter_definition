@@ -1,0 +1,54 @@
+Definition of the ini parameters : 
+__name = eeg_forward_cg : Name of the simulation
+
+type = fitted           : Name of the method, could be ‘fitted’ or ‘unfitted’
+solver_type = cg        : Solver type, used to compute the transfer matrix, could be   
+                                                                 ‘cg’ or ‘xxxx’   to be completed
+element_type = tetrahedron   : Name of the mesh element, could be ‘tetrahedron’ or ‘hexahedron’
+geometry_adapted = false : Geometry adapted or not. Could be related to the ‘type’ , to be confirmed  
+tolerance = 1e-8        :  to be completed
+[electrodes]            : Index word to start the definition of the electrodes
+filename = test_sphere_electrodes.txt        :  of the file containing the electrode
+type = normal            :  to be completed
+[dipoles]         : start dipole definition
+filename = test_sphere_dipoles.txt         : Name of the dipole file
+[volume_conductor.grid]           : start volume_conductor definition
+filename = test_sphere_tet.msh         : Name of the mesh file
+etype                             
+[volume_conductor.tensors]   : Name of the simulation
+filename = test_sphere_tet.cond       : Name of the conductivity file
+etype        
+[solver]         : start the solver definition
+solver_type = cg           : name of the solver, cg  what are the other 
+preconditioner_type = amg  : solver_type this line is already defined 
+cg_smoother_type = ssor          :  to be completed
+intorderadd = 0             :  to be completed
+[solution]            : Name of the simulation
+post_process = true       :  to be completed
+subtract_mean = false    : substract the mean from the solution, averaging reference
+[solution.solver] : Name of the solver
+reduction = 1e-10         :  to be completed
+[solution.source_model]        : define the source model
+type = venant           : define the source model, could be venant, partial integration, subtraction, whitney  to be completed, and specify each associated parameters for each model
+intorderadd = 0         :  to be completed
+intorderadd_lb = 2         :  to be completed
+numberOfMoments = 3         :  to be completed
+referenceLength = 20         :  to be completed
+weightingExponent = 1          :  to be completed
+relaxationFactor = 1e-6       :  to be completed mixedMoments = false          : Name of the simulation
+restrict = true              : Name of the simulation
+initialization = closest_vertex       : Name of the simulation
+[analytic_solution]        : Name of the simulation
+radii = 92 86 80 78         :           Name of the simulation
+center = 127 127 127         : Name of the simulation
+conductivities = 0.00043 0.00001 0.00179 0.0003 : Name of the simulation 3
+[output]         : Name of the simulation
+filename =             out_eeg_forward_{solver_type}_{element_type}_{solution.source_model.type}                 : Name of the simulation
+extension = txt           : Name of the simulation
+
+[wrapper.outputtreecompare]         : Name of the simulation
+name = {output.filename}          : Name of the simulation
+extension = {output.extension}         : Name of the simulation
+reference = ref_{output.filename}       : Name of the simulation
+type = fuzzy            : Name of the simulation
+absolute = 1e-2              : Name of the simulation
