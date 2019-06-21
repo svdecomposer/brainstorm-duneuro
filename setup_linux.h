@@ -26,10 +26,10 @@ if [[ $answer = y ]]; then
 
  #extension functions module
  git clone https://gitlab.dune-project.org/staging/dune-functions.git
- cd dune-functions
- git checkout bd847eb9f6617b116f5d6cb4930e5417d7b6e9a7
- git checkout -b c-interface
- cd ..
+ #cd dune-functions
+ #git checkout bd847eb9f6617b116f5d6cb4930e5417d7b6e9a7
+ #git checkout -b c-interface
+ #cd ..
 
  #pdelab and  required
  git clone --branch releases/$ver_num https://gitlab.dune-project.org/pdelab/dune-pdelab.git
