@@ -1,11 +1,13 @@
 
 #dune folders
-/dune*
+dune*
 
 #build folders (release or debug)
-/build*
+build*
 
 #in case building process is piped to a text file
 building_output.txt
+
+
 
 
