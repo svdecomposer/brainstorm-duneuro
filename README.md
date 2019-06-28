@@ -13,7 +13,22 @@ This repo is concieved to work in a linux or mac environment. So far it works fi
    
 2. clone this repository
 
-## linux version
+```git
+git clone --branch testing https://github.com/svdecomposer/brainstorm-duneuro.git
+```
+
+## Description of the files
+Initially you will find two main folders: 
+
+### apps 
+All the different applications are stored here. For instance, continuous Galerkin, Tet-based FEM solutions for EEG and for MEG are stored here.
+
+### config_files
+Setup scripts and different configuration files for each version.
+
+## Compilation
+
+### linux version
 1. execute setup_linux.h (for release build).
 ```
 ./setup_linux.h
@@ -29,11 +44,27 @@ This repo is concieved to work in a linux or mac environment. So far it works fi
    meg
    seeg
 
-## mca version
+### mac version
 1. execute setup_mac.h (for release build).
 
 
-## windows version
+### windows version
+
 1. execute setup_windows.h (for release build).
    The main difference with the linux version is that the compiler is changed.
    The fortran patch.
+
+Set the configuration script as executable:
+```bash
+sudo chmod +x config_files/setup_windows.sh
+```
+
+Execute setup_windows.sh
+
+```bash
+./config_files/setup_windows.sh
+```
+
+>>>>>>> unfinished <<<<<<<<<
+
+
