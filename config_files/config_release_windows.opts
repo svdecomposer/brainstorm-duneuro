@@ -4,7 +4,7 @@ CMAKE_FLAGS="\
   -DCMAKE_BUILD_TYPE=Release\
   -DCMAKE_DISABLE_FIND_PACKAGE_MPI=TRUE\
   -DMatlab_ROOT_DIR=/usr/local/MATLAB/R2019a\
-  -DCMAKE_TOOLCHAIN_FILE=/home/juan/brainstorm-duneuro/Toolchain-Ubuntu-mingw32.cmake\
+  -DCMAKE_TOOLCHAIN_FILE=/home/juan/brainstorm-duneuro/config_files/Toolchain-Ubuntu-mingw32.cmake\
 "
 MAKE_FLAGS="-j2"
 
