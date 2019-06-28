@@ -1,6 +1,14 @@
 # brainstorm-duneuro
 DuNeuro integration into Brainstorm Toolbox for advanced FEM forward modelling.
 
+## Description of the files
+Initially you will find two main folders: 
+
+### /apps 
+All the different applications are stored here. For instance, continuous Galerkin, Tet-based FEM solutions for EEG and for MEG are stored here.
+
+### /config_files
+Setup scripts and different configuration files for each version.
 
 ## initial setup
 This repo is concieved to work in a linux or mac environment. So far it works fine in an ubuntu 10.04 lts. Windows executables will be generated through cross-compilation with mingw.
@@ -17,14 +25,7 @@ This repo is concieved to work in a linux or mac environment. So far it works fi
 git clone --branch testing https://github.com/svdecomposer/brainstorm-duneuro.git
 ```
 
-## Description of the files
-Initially you will find two main folders: 
 
-### apps 
-All the different applications are stored here. For instance, continuous Galerkin, Tet-based FEM solutions for EEG and for MEG are stored here.
-
-### config_files
-Setup scripts and different configuration files for each version.
 
 ## Compilation
 
