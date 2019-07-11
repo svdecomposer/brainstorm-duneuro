@@ -1,4 +1,9 @@
 function [lf, model]= Compute_analytical_solution(model)
+% [lf, model]= Compute_analytical_solution(model)
+%  This function compute the analytical forward 
+%  for the spherical head model defined in the matlab structure model 
+%  The output is stored in model. 
+% 
 %% Compute analytical solution
 disp('Compute the analytical solution')
 %% Create vol ana
@@ -51,5 +56,4 @@ if isfield(model,'save_result')
         end
     end
 end
-disp('Load BST ana solution')
 end
