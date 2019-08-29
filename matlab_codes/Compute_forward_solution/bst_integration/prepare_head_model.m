@@ -14,7 +14,7 @@ head  = load(fullfile(bstAnatomyPath,'tess_head.mat'));
 inner  = load(fullfile(bstAnatomyPath,'tess_innerskull.mat'));
 outer  = load(fullfile(bstAnatomyPath,'tess_outerskull.mat'));
 brain  = load(fullfile(bstAnatomyPath,'tess_cortex_pial_low.mat'));
-elctrode = load(fullfile(bstElectrodePath,'channel_BioSemi_128_A1.mat'));
+elctrode = load(fullfile(bstElectrodePath,'channel_BioSemi_32.mat'));
 %% 2- Merge the surfaces
 [newnode,newelem]=mergemesh(head.Vertices,head.Faces,...
                                                      outer.Vertices,outer.Faces,...
@@ -83,3 +83,7 @@ hold on;
 grid on; grid minor;
 end
 legend({'Inner','Outer','Scalp'})
+hold on
+quiver3(coor(1),coor(2),coor(3),0,0,0.1,'LineWidth',2);
+hold on;
+plotmesh(channel_loc,'k.','markersize',10)

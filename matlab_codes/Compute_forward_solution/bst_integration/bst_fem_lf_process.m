@@ -52,13 +52,13 @@ cd(outPutFolder); cd('temp')
 dipole_filename = 'dipole_model.txt'; 
 dipoles_pos = brain.Vertices;% source location
 dipoles_pos_test = dipoles_pos(1:5,:);% source location
-write_duneuro_dipole_file(dipoles_pos_test,dipole_filename);
+write_duneuro_dipole_file(dipoles_pos,dipole_filename);
 
 %% 3- The electrode Model
 cd(outPutFolder); cd('temp')
 electrode_filename = 'electrode_model.txt'; 
 channel_loc_test = channel_loc(1:3,:) ;
-write_duneuro_electrode_file(channel_loc_test, electrode_filename);
+write_duneuro_electrode_file(channel_loc, electrode_filename);
 
 %% 4 - The Conductivity Model
 cd(outPutFolder); cd('temp')
@@ -86,14 +86,20 @@ cd(outPutFolder); cd('temp')
 mini_filename = 'model_minifile.mini';
 write_duneuro_minifile(vol, mini_filename);
 save(['ICBM152_' num2str(length(node))],'vol');
+
+
 %% 6 run the EEG forward problem & compute the lead field
 cmd = 'test_eeg_forward.exe ';
 arg = mini_filename;
 cd(outPutFolder)
 copyfile test_eeg_forward.exe temp
 cd('temp')
+
  %  run the system
+tic;
 system([cmd  arg])
+t1 = toc;
+save('time_seconde_32electrode_8233nodes','t1')
 temp = load('VFEM.txt');
 lf_fem = temp;
 
