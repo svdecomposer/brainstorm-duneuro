@@ -1,0 +1,32 @@
+This file summurize the problems we face, the solution and the next steps : 
+
+ 
+Write a documentation about the Duneuro/bst
+
+Which is the reference electrode
+
+How to define the anisotropy for DN
+  
+How to define the level set with DN and hat are the main parameters
+
+difference of the implemnation of the transfer matrix
+
+What is the superALU ? how it works and is it available for windows
+
+Compile DN 
+
+Get a fixed and stable version
+
+Generate the exe for linux and test for mac
+
+
+
+
+difference of the implemnation of the transfer matrix
+how to define he anisotropie
+how do you define the level set approcah
+how is the connectivity defined in the level set 
+how do you define the conductivity anisotropy in the case of the level set?   
+do you have any model available
+it take to much time with the exe ... ~ 2 hours for the 8233 nodes and 32 electrodes 3 layer model
+
