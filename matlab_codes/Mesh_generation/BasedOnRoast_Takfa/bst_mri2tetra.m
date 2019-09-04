@@ -25,7 +25,7 @@ function [node,elem,face,allMask] = bst_mri2tetra(pathToT1,pathToT2,options)
 % and keeping only the top part, whic ic the most relebant for MEEG
 % modeling, the defaut cutting value is set to z = roud(size(mriVol,3)/4);
 %        options.keepSliceFrom : value of the slice        
-%        options.aveMeshFormatMat : Save the mesh on the format mat matlab, set to  1 or 0
+%        options.saveMeshFormatMat : Save the mesh on the format mat matlab, set to  1 or 0
 %        options.saveMeshFormatMsh : Save the mesh on the format mat msh, set to  1 or 0
 %        options.plotMesh : Save the final mesh, set to  1 or 0
 % http://www.cgal.org/Manual/3.5/doc_html/cgal_manual/Mesh_3/Chapter_main.html
@@ -36,6 +36,7 @@ function [node,elem,face,allMask] = bst_mri2tetra(pathToT1,pathToT2,options)
 % 	 face: output, mesh surface element list of the tetrahedral mesh
 % 	       the last column denotes the boundary ID
 %     allMask : The output of the MRI segmentation used to generate the mesh
+% The main extracted tissu are : {'WHITE','GRAY','CSF','BONE','SKIN'}
 %% Dependencies : 
 % Roast toolbox : https://www.parralab.org/roast/
 % meshByIso2meshWithoutElectrode.m
@@ -63,11 +64,11 @@ function [node,elem,face,allMask] = bst_mri2tetra(pathToT1,pathToT2,options)
 %                              'maxvol',maxvol,'saveMeshFormatMat',saveMeshFormatMat,...
 %                              'saveMeshFormatMsh',saveMeshFormatMsh,...
 %                               'plotMesh',plotMesh,'cutMri',cutMri);
-% bst_mri2tetra(pathToT1,pathToT2,options)
+% [node,elem,face,allMask] = bst_mri2tetra(pathToT1,pathToT2,options)
 
 
 
-%% Process of segmentation derived from roast
+%% Process of segmentation derived from roast toolbox
 
 %% path to Name of the MRI data
 %subjRSPD = 'example/MNI152_T1_1mm.nii';
@@ -135,7 +136,7 @@ else
     load([dirname filesep baseFilename '_' uniqueTag '.mat'],'node','elem','face');
 end
 
-% processin the mesh 
+% processing the mesh 
 % [conn,~,~]=meshconn(elem,length(node))
 % node1=smoothsurf(node,[],conn,10,20,'Lowpass')
 % [no,el]=removeisolatednode(node1,elem);   % remove all internal nodes
