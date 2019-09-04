@@ -37,9 +37,9 @@ To run example, you should
 %	     options.maxvol: target maximum tetrahedral elem volume
 % The additional parameters are :
 %        options.cutMri  : Option 1 or 0, that allows to cut the IMR on the Z direction
-% and keeping only the top part, whic ic the most relebant for MEEG
+% and keeping only the top part, which is the most relevant for MEEG
 % modeling, the defaut cutting value is set to z = roud(size(mriVol,3)/4);
-%        options.keepSliceFrom : value of the slice        
+%        options.keepSliceFrom : z value of the slice        
 %        options.saveMeshFormatMat : Save the mesh on the format mat matlab, set to  1 or 0
 %        options.saveMeshFormatMsh : Save the mesh on the format mat msh, set to  1 or 0
 %        options.plotMesh : Save the final mesh, set to  1 or 0
