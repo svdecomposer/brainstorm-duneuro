@@ -1,5 +1,6 @@
 This file summurize the problems we face, the solution and the next steps : 
 
+Compile correctely the duneuro again !!
  
 Write a documentation about the Duneuro/bst
 
@@ -13,13 +14,17 @@ difference of the implemnation of the transfer matrix
 
 What is the superALU ? how it works and is it available for windows
 
-Compile DN 
+Compile DN again
+
+Write the ladfiled matrix from DN as binary instead of the text file
 
 Get a fixed and stable version
 
-Generate the exe for linux and test for mac
+Generate the exe for linux and test on mac and linux envirenement
 
+Write the bst tutorial and apply the FEM method similar to the openmeeg tuto : https://neuroimage.usc.edu/brainstorm/Duneuro#preview
 
+Move to tetgen instead of iso2mesh for mesh generation
 
 
 difference of the implemnation of the transfer matrix

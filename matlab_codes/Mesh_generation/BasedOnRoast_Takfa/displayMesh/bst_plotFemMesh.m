@@ -29,11 +29,8 @@ plotMeshOption = options;
 node = femtemplate.Vertices;
 elem =   [femtemplate.Elements femtemplate.Tissue];
 %brain =  femtemplate.Vertices;
-if ~isempty(femtemplate.TissueLabels)
-    tissuelabel = vol.head_model.tissuelabel; %femtemplate.TissueLabels
-else
-    tissuelabel = {'Inner' 'Outer' 'Scalp'};
-end
+tissuelabel = femtemplate.TissueLabels; %femtemplate.TissueLabels
+
 tissueId =  sort(unique(femtemplate.Tissue));
 
 
@@ -53,7 +50,7 @@ if ~isfield(plotMeshOption,'CutingPlanEquation')
         id = elem(:,5)==ind;
         plotmesh(node,elem(id,:),...
             'edgecolor','none',...
-            'facecolor',colorInnerOuterScalp(ind,:),...
+            'facecolor',colorScalpSkullScfGmWm(ind,:),...
             'DisplayName',tissuelabel{ind});
         hold on;
     end
@@ -99,7 +96,7 @@ else %% using cutting plan
         h = plotmesh(node,elem(id,:),...
             plotMeshOption.CutingPlanEquation,...
             'edgecolor','none',...
-            'facecolor',colorInnerOuterScalp(ind,:),...
+            'facecolor',colorScalpSkullScfGmWm(ind,:),...
             'DisplayName',tissuelabel{ind});
         hold on;
     end
