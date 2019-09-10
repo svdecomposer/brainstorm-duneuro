@@ -54,17 +54,10 @@ center_inner = mean(inner.Vertices);
 % [node,elem,face]=surf2mesh(v,f,p0,p1,keepratio,maxvol,regions,holes,forcebox)
 % parameter to tune in order to change the mesh resolution
 % maxvol = 10; % [10 to 0.0001]
-if isstruct(MeshOpt)
-    maxvol = MeshOpt.maxvol;
-    if isfield(MeshOpt, 'keepratio')
-        keepratio = MeshOpt.keepratio;
-    else
-        keepratio = 1;
-    end
-else
-    maxvol = MeshOpt;
-    keepratio = 1;
-end
+
+maxvol = MeshOpt.maxvol;
+if is
+keepratio = MeshOpt.keepratio;
 
 factor_bst = 1.e-6;
 %keepratio = 1;

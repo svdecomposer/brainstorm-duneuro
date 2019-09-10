@@ -32,10 +32,18 @@ cd(outPutFolder); mkdir temp
 % Generate Volume Mesh from surface mesh
 % 0- Main parameters
 conductivity = [1 0.0125 1];
+
 % iso@mesh parameter
-maxvol = 1; % max volume of the tetra element, option used by iso2mesh, in this script it will multiplied by e-6;
+
+maxvol = 0.1; % max volume of the tetra element, option used by iso2mesh, in this script it will multiplied by e-6;
                    % range from 10 for corse mesh to 1e-4 or less for very
-                   % fine mesh                   
+                   % fine mesh 
+% 
+% keepratio = 1 ; % input, percentage of elements being kept after the simplification   
+% 
+% MeshOpt.maxvol = maxvol;
+% MeshOpt.keepratio = keepratio;
+
 plotHeadModel = 1;
 head_model = bst_prepare_head_model(bstAnatomyPath,maxvol,plotHeadModel);
  
@@ -73,6 +81,7 @@ cd(outPutFolder); cd('temp')
 cond_filename = 'conductivity_model.con'; 
 write_duneuro_conductivity_file(conductivity,cond_filename)
 head_model.conductivity = conductivity;
+
 %% 5 Build the file that could be stored in the bst data base
 vol.pos = head_model.node; 
 vol.tet = head_model.elem(:,1:4);

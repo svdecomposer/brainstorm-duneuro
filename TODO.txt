@@ -1,8 +1,10 @@
 This file summurize the problems we face, the solution and the next steps : 
 
-Compile correctely the duneuro again !!
+Compile correctely the duneuro again !! ... takfa
  
-Write a documentation about the Duneuro/bst
+Write a documentation about the Duneuro/bst ... juan/takfa
+
+genertae MEG binary files / write the cpp coe and run as what we have for EEG ...Juan
 
 Which is the reference electrode
 
