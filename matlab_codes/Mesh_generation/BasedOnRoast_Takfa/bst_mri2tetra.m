@@ -55,7 +55,7 @@ function [node,elem,face,allMask] = bst_mri2tetra(pathToT1,pathToT2,options)
 % if model == 2,    maxvol =   5; reratio = 3; radbound = 5; angbound = 30; distbound = 0.4; end
 % if model == 3,    maxvol =   1; reratio = 3; radbound = 5; angbound = 30; distbound = 0.4; end
 % 
-% saveMeshFormatMat = 1;
+% saveMeshFormatMat = 0;
 % saveMeshFormatMsh= 0;
 % plotMesh = 1;
 % cutMri =1;
