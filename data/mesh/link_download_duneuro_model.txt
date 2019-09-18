@@ -1,2 +1,2 @@
-
+link to download the duneuro spherical model in the mat format 
 https://www.dropbox.com/s/nf6jint6ysda1q4/duneuro_model.mat?dl=0

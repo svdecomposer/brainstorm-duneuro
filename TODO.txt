@@ -1,0 +1,64 @@
+This file summurize the problems we face, the solution and the next steps : 
+
+Compile correctely the duneuro again !! ... takfa
+ 
+Write a documentation about the Duneuro/bst ... juan/takfa
+
+genertae MEG binary files / write the cpp coe and run as what we have for EEG ...Juan
+
+Which is the reference electrode
+
+How to define the anisotropy for DN
+  
+How to define the level set with DN and hat are the main parameters
+
+difference of the implemnation of the transfer matrix
+
+What is the superALU ? how it works and is it available for windows
+
+Compile DN again
+
+Write the ladfiled matrix from DN as binary instead of the text file
+
+Get a fixed and stable version
+
+Generate the exe for linux and test on mac and linux envirenement
+
+Write the bst tutorial and apply the FEM method similar to the openmeeg tuto : https://neuroimage.usc.edu/brainstorm/Duneuro#preview
+
+Move to tetgen instead of iso2mesh for mesh generation
+
+
+difference of the implemnation of the transfer matrix
+how to define he anisotropie
+how do you define the level set approcah
+how is the connectivity defined in the level set 
+how do you define the conductivity anisotropy in the case of the level set?   
+do you have any model available
+it take to much time with the exe ... ~ 2 hours for the 8233 nodes and 32 electrodes 3 layer model
+
+
+
+The cross compilation of the dune neuros
+The lack of documentation on dune but more with duneuro
+Write the cpp codes in order to generates the exe for each steps.
+
+Explain or document all the parameters used from matlab or from the *.mini file
+Check the compilation for all platforms
+•	Review the process of the Openmeeg
+o	Include a template model FEM based (@default subject)
+o	Which mesh (tetran hexa ….)
+o	Which source (PI, Venant …)
+o	Meshing models programs like vgrid, iso
+•	Compare the results BEM/FEM
+•	how to write the DN & BST matlab data structures to files
+•	how to read the DN output files back into matlab,
+•	Testing with practical datasets 
+•	prepare a BST call to DN  (for EEG for now)
+•	unerstand how to import a volume and generate a mesh for DN 
+•	understand how to call DN works for MEG
+•	Get the DN binaries running on the platforms
+
+
+WARNING: You are using AMG without SuperLU! Please consider installing SuperLU, or set the usesuperlu flag to false to suppress this warning
+

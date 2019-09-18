@@ -1,0 +1,7 @@
+__name = test_eeg_forward
+type =  fitted
+solver_type =  cg
+element_type  = tetrahedron
+geometry_adapted  = false
+tolerance = 1.000000e-08
+[electrodes]
