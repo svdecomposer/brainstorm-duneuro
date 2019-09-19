@@ -71,6 +71,7 @@ factor_bst = 1.e-6;
 regions = [seedRegion1;seedRegion2;seedRegion3];
 % The order is important, the outpur label will be related to this order,
 % which is related to the conductivity value.
+% clear node,elem,face
 [node,elem,face]=surf2mesh(newnode,newelem,...
                                                 min(newnode),max(newnode),...
                                                 keepratio,maxvol*factor_bst,regions,[]);  
@@ -84,7 +85,7 @@ regions = [seedRegion1;seedRegion2;seedRegion3];
     % 0 ==> 3 for scalp
 %% ---------------------------------------- WARNING -------------------------------------
     %% The dangerous part... on doit trouver moyen d'automatise cette partie
-elem((elem(:,5)==0),5) = 3;
+%elem((elem(:,5)==0),5) = 3;
 
 %% Mesh check and repair 
 [no,el]=removeisolatednode(node,elem(:,1:4));
@@ -98,8 +99,9 @@ if nargin == 3
 figure;
 subplot(1,2,2)
 col = ['r','y','b'];
-for ind = 1 : length(unique(elem(:,5)))
-plotmesh(node,elem((elem(:,5)==ind),:) ,'y>0','facecolor',col(ind));
+elemID = unique(elem(:,5));
+for ind = 1 : length(elemID)
+plotmesh(node,elem((elem(:,5)==elemID(ind)),:) ,'y>0','facecolor',col(ind));
 hold on;
 grid on; grid minor;
 end

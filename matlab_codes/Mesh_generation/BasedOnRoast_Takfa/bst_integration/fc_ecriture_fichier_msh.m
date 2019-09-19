@@ -81,7 +81,6 @@ fprintf(fid,'%i \r\n',Nombre_des_elements);
 for i=1:Nombre_des_elements
    %fprintf(fid,'%i %i %s  %i  %i  %i %i  %i %i \r\n',ne(i),elm_type_tetra,'2',0 ,ne5(i),ne1(i),ne2(i),ne3(i),ne4(i));
     fprintf(fid,'%i %i %s  %i  %i  %i %i  %i %i \r\n',ne(i),elm_type_tetra,'2',ne5(i)-1,0,ne1(i),ne2(i),ne3(i),ne4(i)); % modification of TIM
-
 end
 fprintf(fid,'%s\r\n','$EndElements');
 

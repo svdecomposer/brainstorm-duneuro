@@ -28,6 +28,17 @@ Write the bst tutorial and apply the FEM method similar to the openmeeg tuto : h
 
 Move to tetgen instead of iso2mesh for mesh generation
 
+How the hole can affects the fem solution
+
+
+what is the effect of the whole in the mesh
+
+How about the isolated isles 
+
+
+How to define the source space on the realisttic head model
+
+
 
 difference of the implemnation of the transfer matrix
 how to define he anisotropie
@@ -36,6 +47,14 @@ how is the connectivity defined in the level set
 how do you define the conductivity anisotropy in the case of the level set?   
 do you have any model available
 it take to much time with the exe ... ~ 2 hours for the 8233 nodes and 32 electrodes 3 layer model
+
+remove the spinal cord and the cerebellum from the NY or the SimNimbs model
+
+It's much better to define source/dipoles under the cortex surfaces nodes than inder
+ the facettes, this is related to my resylts observed on the effect of the monopoles position with the st venant method 
+
+low amplitude stimulation data 
+https://simnibs.github.io/simnibs/build/html/documentation/command_line/mri2mesh.html#mri2mesh-docs
 
 
 

@@ -39,13 +39,13 @@ maxvol = 0.1; % max volume of the tetra element, option used by iso2mesh, in thi
                    % range from 10 for corse mesh to 1e-4 or less for very
                    % fine mesh 
 % 
-% keepratio = 1 ; % input, percentage of elements being kept after the simplification   
+ keepratio = 1 ; % input, percentage of elements being kept after the simplification   
 % 
-% MeshOpt.maxvol = maxvol;
-% MeshOpt.keepratio = keepratio;
+MeshOpt.maxvol = maxvol;
+MeshOpt.keepratio = keepratio;
 
 plotHeadModel = 1;
-head_model = bst_prepare_head_model(bstAnatomyPath,maxvol,plotHeadModel);
+head_model = bst_prepare_head_model(bstAnatomyPath,MeshOpt,plotHeadModel);
  
  % 1.2- Write the mesh in the 'msh' format (input for duneuro)
 cd(outPutFolder); cd('temp')
