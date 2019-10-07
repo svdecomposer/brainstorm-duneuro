@@ -66,7 +66,7 @@ if [[ $answer = y ]]; then
 fi
   # dune-common/bin/dunecontrol --module=duneuro-matlab --opts=config_release_windows.opts --builddir=`pwd`/build-release all
     sleep .5
-  fi
+
 fi
 
 #build library file
@@ -88,7 +88,7 @@ if [[ $answer = y ]]; then
 fi
   # dune-common/bin/dunecontrol --module=duneuro-matlab --opts=config_release_windows.opts --builddir=`pwd`/build-release all
     tail -f build_release_windows_${time_stamp}.log
-  fi
+  
 fi
 
 #build library file
@@ -109,8 +109,8 @@ if [[ $answer = y ]]; then
   dune-common/bin/dunecontrol --only=duneuro-matlab --opts=config_release_windows.opts --builddir=`pwd`/build-release all
 fi
   # dune-common/bin/dunecontrol --module=duneuro-matlab --opts=config_release_windows.opts --builddir=`pwd`/build-release all
-  else
-  fi
+  
+  
 fi
 
 #build library file
@@ -132,7 +132,7 @@ if [[ $answer = y ]]; then
 fi
   # dune-common/bin/dunecontrol --module=duneuro-matlab --opts=config_release_windows.opts --builddir=`pwd`/build-release all
     duneuro/dune-common/bin/dunecontrol --opts=config_files/config_release_windows.opts --builddir=`pwd`/build_release_windows_${time_stamp} all
-  fi
+  
 fi
 
 #build library file
