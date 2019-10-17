@@ -27,7 +27,7 @@
 #  for i in duneuro-matlab duneuro-py; do
 #  	git clone --branch releases/2.5 --recursive https://gitlab.dune-project.org/duneuro/$i.git;
 #  done;
-
+#  git clone --branch 2.6-changes https://gitlab.dune-project.org/duneuro/duneuro-tests.git
 #  cd ..
 # fi
 
