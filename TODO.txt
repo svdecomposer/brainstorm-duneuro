@@ -1,64 +1,97 @@
 This file summurize the problems we face, the solution and the next steps : 
 
-Compile correctely the duneuro again !! ... takfa
+
+Question & Help to/from Sophie ? 
+1-Related to the Duneuro code :
+- Script Cpp to generate binary for LF : EEG, MEG ==> ok check the tests
+- //       //                  //     the stifness matrix and store it in txt or binary file ==> dont really needed
+- //           //                //   the transfert matrix and store it  //         //  ==> feasable and we can do it.
+- Example with level set method as an input ==> potpone for next goals
+- Pble with the test_eeg_transfer ? check with Sophie the output? run C:\duneuro\duneuro_windows_bis\brainstorm-duneuro\TestDuneuro\test test.m
+- 
+
+
+Question to Carsten : 
+- Help and orientation for the SEEG process == > read the paper and check with Nikolas and his thesis ==> check the python
+- Possible to use the superposition ? ==> to check
+- How to simulate the stimultion within the brain ? 
+	-1 : Compute a leadfield on all sEEG electrode, 'passive', with a source space within the brain
+	-2 : Compute a leadfiled from only the stimulation electrode      
+ 	-3 : addition of these two parameter can build an equivalent model
+
+
+Question to Christan :
+- 
+- Full example set of the level set ==> postpone
+
+
+2- Genral questions :
+-Which is the reference electrode/ how it's defined (basic but still stuck)
+-How to define the anisotropy for DN (in the cond file) ==> check sophie example 
+-What is the superALU ? how activate it? how it works and is it available for windows ==> send s screen shot to sophie 
+-Write a documentation about the Duneuro/bst ... juan/takfa == > send an email to the involved personns 
+-Documentation about the ini file == > send an email to the involved personns 
+
+
+-SEEG : How to model the stimulation electrode ?
+		- as a dipole with a moment ? length = to the distance between the 2 electrodes/contact points, 
+					      strength = to the amplitude of stimulation, 
+					      position = in the middle of the two electrodes
+				it makes sens ?
  
-Write a documentation about the Duneuro/bst ... juan/takfa
 
-genertae MEG binary files / write the cpp coe and run as what we have for EEG ...Juan
-
-Which is the reference electrode
-
-How to define the anisotropy for DN
   
-How to define the level set with DN and hat are the main parameters
+How to define the level set with DN and what are the main parameters
 
-difference of the implemnation of the transfer matrix
+difference of the implemention of the transfer matrix
 
-What is the superALU ? how it works and is it available for windows
 
-Compile DN again
 
-Write the ladfiled matrix from DN as binary instead of the text file
+3- Juan ?
 
-Get a fixed and stable version
+-Write the ladfiled matrix from DN as binary instead of the text file
 
-Generate the exe for linux and test on mac and linux envirenement
+-Get a fixed and stable version
 
-Write the bst tutorial and apply the FEM method similar to the openmeeg tuto : https://neuroimage.usc.edu/brainstorm/Duneuro#preview
+-Generate the exe for linux and test on mac and linux envirenement
 
+-Write the bst tutorial and apply the FEM method similar to the openmeeg tuto : https://neuroimage.usc.edu/brainstorm/Duneuro#preview
+
+-Genertae MEG binary files / write the cpp code and run as what we have for EEG ...Juan
+
+- Mesh
 Move to tetgen instead of iso2mesh for mesh generation
-
 How the hole can affects the fem solution
-
-
-what is the effect of the whole in the mesh
-
+what is the effect of the hole in the mesh
 How about the isolated isles 
+remove the spinal cord and the cerebellum from the NY or the SimNimbs model
 
 
-How to define the source space on the realisttic head model
+-Marios
+How to define the source space on the realisttic head model ==> ask Marios
 
 
+Sophie/Carten/Christian :
 
-difference of the implemnation of the transfer matrix
-how to define he anisotropie
 how do you define the level set approcah
 how is the connectivity defined in the level set 
 how do you define the conductivity anisotropy in the case of the level set?   
 do you have any model available
 it take to much time with the exe ... ~ 2 hours for the 8233 nodes and 32 electrodes 3 layer model
 
-remove the spinal cord and the cerebellum from the NY or the SimNimbs model
+
 
 It's much better to define source/dipoles under the cortex surfaces nodes than inder
  the facettes, this is related to my resylts observed on the effect of the monopoles position with the st venant method 
 
 low amplitude stimulation data 
+
 https://simnibs.github.io/simnibs/build/html/documentation/command_line/mri2mesh.html#mri2mesh-docs
 
+check ow it works  https://github.com/simnibs/simnibs/issues/1
 
 
-The cross compilation of the dune neuros
+
 The lack of documentation on dune but more with duneuro
 Write the cpp codes in order to generates the exe for each steps.
 
@@ -81,3 +114,156 @@ o	Meshing models programs like vgrid, iso
 
 WARNING: You are using AMG without SuperLU! Please consider installing SuperLU, or set the usesuperlu flag to false to suppress this warning
 
+conductivity value : https://simnibs.github.io/simnibs/build/html/documentation/conductivity.html
+
+
+
+
+
+%% How to compile DUNEURO
+Follow the recommandation of Juan on the Git Test repo
+then 
+ dune-common/bin/dunecontrol --opts=../config_files/config_release_windows.opts --builddir=`pwd`/build_release_windows_${time_stamp} all
+
+then add the brainstorm_app to the duneuro_matlab with the the cpp examples 
+then change the Cmakelist file and add the add_subdirectory("brainstorm_app")
+inside this you have to add the cpp files tha should be compiled for brainstorm
+and you have also to modify the cmakeliste as as to consider the cpp files 
+
+
+DN not support the deep electrodes check with Sophie ....
+
+electrode complete electrode model ... look at the paper ...
+electrode model ... check sampsa model electrode ... check the zaffiro
+start with point electrode and then the zeffiro for more complete electrode model ... 
+
+++++ Add option to the config ini file that ask to save or not the transfer matrix 
+
+
+
+
+
+static linking 
+mex file are not static 
+exe is static 
+
+.... 
+
+
+/.................................../
+How to use the duneuro_test modul
+Compile the Duneuro on linux system as explained in Sophie's video
+
+when the building is done, go to the building folder and to the dueneuro-test folder 
+
+run this command
+/mnt/c/duneuro/dune_software/build_release_october19/duneuro-tests$ make build_tests
+then cd src
+ make test to test all the scenariso
+or 
+ 
+./test_xxx xxx.ini to run 
+
+
+/..................................../
+
+for windows compatibility use the c interface compatibility branche for duneuro instead of the 2.6 branche
+
+
+tolerance = 1e-8 : mini file, the toleance error between the transfered solution and the direct solution
+
+// compute numerical solution direct
+		driver->solveEEGForward(dipoles[i], *solution, config.sub("solution"));
+		auto num_direct = driver->evaluateAtElectrodes(*solution); ==> project the solution on the electrode neasrest to the node and then reduce the size of the solution
+
+ 
+la baranche de dueneuro test de sophie ne fonctionne telle qu'elle en windows version, il faut la faire uniquement  avec la version linix vue le module python qui
+ bug dans certains cas avec windows 
+
+
+
+
+
+cauchy_tensor_reader : pkoi diviser sur 1000
+
+
+
+
+
+From the Duneuro part and from the lunch discussion with Carsten's team 
+I'm learning a lot. 
+
+But I'm not sure to be able to work on all this in the same time and in 
+
+
+out_mri_nii dans bst convert bst MRI to nii
+
+    [iRh, BstTessRhFile, nVertOrigR] = import_surfaces(iSubject, TessRhFile, 'GII-WORLD', 0);
+
+
+to read surface : check lin import_anatomy_cat.m line 320
+et  
+        [TessMat, err] = tess_addsphere(BstTessRhFile, TessRsphFile, 'GII-CAT');
+ at 325
+
+
+
+Fieldtrip SimBio support anisotropy and deep electrodes. 
+Just check Johannes emails
+
+ask francois pour le cortex dans le processu CAT... il parrait aue c pas la moyenne entre pial and wm
+
+
+Pour la compilation de duneuro dans linux avec duneuro tests : 
+Utilise la version 2.6
+clone dpuis le mater les fichier en utilisant la version dans le clone
+compile simbiosphere avant de lancer la compilation
+
+
+
+
+
+
+Skull conductivity calibration : 
+- Features for individualizing skull conductivity, while this calibration is an important feature of our HeadModel Matlab pipeline
+- Discuss with Richard about this pipline of skull calibration in order to find the conductivity
+
+
+Read about Hysco pipline for tensor extraction.
+
+
+
+le zscore sur la solution anisotropic tends vexactement sur la solution analyic .... voire pourauoi et utiliser dans le cas echeant.
+Source model : how could we write it back in order to avoides the 
+
+
+
+
+Electrode and brain modeling in stereo-EEG : read it for the sEEG
+
+// for the head model with tensor:
+We built an homogeneous isotropic brain model (HoIBM) and
+an heterogenous anisotropic brain model (HeABM). The HoIBM assumes
+the electric conductivity of the brain is 0.33 S/m (Dannhauer
+et al., 2011). The HeABM incorporates the heterogeneity and
+anisotropy using a diffusion tensor atlas based on 81 healthy participants
+(Mori et al., 2008) co-registered with the ICBM model. We
+considered the electrical conductivity as a tensor field through a
+linear transformation of the diffusion tensor eigenvalues (Tuch
+et al., 2001).
+
+- For less than one milimiter, the effect of the electrode is not considered, do not need to model a complete electrode
+- for the anisotropy, this affect largely the inverse problem, in which the localisation pass from 15mm to 5mm errors.
+
+
+
+DTI :
+Deux paramètres principaux qui sont prévus à partir du tenseur pour définir l'orientation de 
+cellule nerveuse sont diffusivité fractionnaire (FA) d'anisotropie et de moyen (MD). 
+Le fa définit le degré de directionnalité de diffusion, 
+et la DM fournit les informations sur la diffusivité moyenne de l'eau.
+
+https://github.com/justinblaber/dwmri_visualizer
+SUPER : http://justinblaber.org/brief-introduction-to-dwmri/
+https://justinblaber.org/downloads/articles/
+https://web.stanford.edu/group/vista/cgi-bin/wiki/index.php/DTI_Preprocessing
